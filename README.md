@@ -62,11 +62,3 @@ Once the robot is following the pre-calculated path, physical obstacles can be p
 ![Obstacle Avoidance](./img/local_obstacle.gif)
 
 ---
-
-### Notes
-
-- Ensure that all GIFs and images are located in the `img` folder.
-- Test the README rendering locally using a Markdown viewer or directly on GitHub.
-- Push the `img` folder along with the README file to the repository for correct rendering.
-
----
