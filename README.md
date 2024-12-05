@@ -1,29 +1,72 @@
 # Basics of Mobile Robotics - PROJECT
 
-**Students :  Elias Da Ros, Rim El Qabli, Mehdi Peci, Luis Oscar Rodriguez Jimenez**
+**Students:** Rim El Qabli, Elias Da Ros, Mehdi Peci, Luis Oscar Rodriguez Jimenez
+
+---
 
 ## Project Description
 
-This project was divided in four steps :
-- **Create an environement:** An environment has to be created for the Thymio. This environment must contain a set of obstacles that the Thymio would avoid by using the global navigation which are detected only by the camera during the initialization step, without using the sensors.
+This project was divided into four steps:
 
-- **Find the best path:** The Thymio and the goal have to be placed at a random position in the map (environement). From this start position, the Thymio has to find the best path to reach the goal. The setup can be changed multiple times to show the robustness of the program, as long as the robot is not moving the obstacles, the goal and the starting position of the robot can be changed at your convinience. This process is demonstated below:
-![change of setup](./img/chgt_setup.gif)
+---
 
+### 1. Create an Environment
 
-- **Motion Control & Position Estimation:** The Thymio has to be controlled to help it follow correctly the found path. A filter will then make it possible to estimate the position. On the gifs below the position estimated by the camera is shown in red and the position estimated by the encoders is shown in yellow. At the begining, the encoders start at position (0,0) and then converge to the position of the robot. The final position of the robot is estimated using a Kalman filter with the positions of the camera and the encoders and is shown in green. 
+An environment has to be created for the Thymio. This environment must contain a set of obstacles that the Thymio would avoid by using the global navigation, which are detected only by the camera during the initialization step, without using the sensors.
 
+---
 
->|Two estimations                                       |Final estimation |
-|:-----------------------------------------------:|:-------------------------------------------------------------------------------:|
-| ![two_estim](./img/base_configuration.gif) | ![final_estim](./img/base_vert.gif) |
+### 2. Find the Best Path
 
-during this steps the robot can be kidnapped and placed somewhere else, or the tracking with the camera can be deactivated and the position is estimated only with the encoders. Those two cases are shown below:
+The Thymio and the goal have to be placed at random positions in the map (environment). From this start position, the Thymio has to find the best path to reach the goal. The setup can be changed multiple times to show the robustness of the program. As long as the robot is not moving the obstacles, the goal, and the starting position of the robot can be changed at your convenience.
 
->|Kidnapping                                       |Position estimation using only the encoders |
-|:-----------------------------------------------:|:-------------------------------------------------------------------------------:|
-| ![Kidnapping](./img/kidnapping.gif) | ![only encoders](./img/encodeurs.gif) |
+#### Example:
 
-- **Obstacles Avoidance:** Once the robot is following the pre-calculated path, some physical obstacles can be placed on front of him which he will have to avoid. This is shown below:
+![Change of setup](./img/chgt_setup.gif)
 
-![Obstacles avoidance](./img/local_obstacle.gif)
+---
+
+### 3. Motion Control & Position Estimation
+
+The Thymio has to be controlled to help it follow the calculated path correctly. A filter will then make it possible to estimate the position. In the GIFs below:
+- The position estimated by the camera is shown in **red**.
+- The position estimated by the encoders is shown in **yellow**. 
+
+At the beginning, the encoders start at position (0,0) and then converge to the position of the robot. The final position of the robot is estimated using a **Kalman filter**, combining the positions of the camera and the encoders, and is shown in **green**.
+
+#### Two Estimations vs. Final Estimation:
+
+| Two Estimations                                      | Final Estimation                                   |
+| :--------------------------------------------------:| :-----------------------------------------------:|
+| ![Two Estimations](./img/base_configuration.gif)    | ![Final Estimation](./img/base_vert.gif)          |
+
+---
+
+#### Special Cases:
+
+- **Kidnapping:** The robot can be moved to a different location.  
+- **Position Estimation Using Only Encoders:** The camera tracking can be deactivated, and the position is estimated solely using the encoders.
+
+| Kidnapping                                          | Position Estimation Using Only Encoders          |
+| :-------------------------------------------------:| :-----------------------------------------------:|
+| ![Kidnapping](./img/kidnapping.gif)                | ![Only Encoders](./img/encodeurs.gif)            |
+
+---
+
+### 4. Obstacle Avoidance
+
+Once the robot is following the pre-calculated path, physical obstacles can be placed in its way. The robot will detect and avoid these obstacles.
+
+#### Example:
+
+![Obstacle Avoidance](./img/local_obstacle.gif)
+
+---
+
+### Notes
+
+- Ensure that all GIFs and images are located in the `img` folder.
+- Test the README rendering locally using a Markdown viewer or directly on GitHub.
+- Push the `img` folder along with the README file to the repository for correct rendering.
+
+---
